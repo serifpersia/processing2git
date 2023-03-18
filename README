@@ -1,1 +1,6 @@
-
+I needed a way to update my app from processing, acessing github REST API to get latest release version like v1.0 etc.
+It will get latest release tag, compare with the file you already have(the file checked has to have v1.0 or something 
+otherwise the check will fail.
+The zip name set as fileName is the file the code is looking for in the latest release tag.
+After downloading the zip gets extracted, the old file with outdated version in its name gets deleted.
+Code creates download progress bar as cue that the process is running
