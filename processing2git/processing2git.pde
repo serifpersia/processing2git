@@ -26,8 +26,8 @@ String owner = "repo owner name";
 String repo = "repo-name";
 String fileName = "zip file name.zip";
 //change directiory of zip download and zip extraction currently update folder is used!
-String saveDir = System.getProperty("user.dir") + "/update";
-String destinationFolderPath =  System.getProperty("user.dir") + "/update";
+String saveDir = System.getProperty("user.dir") + "/update/";
+String destinationFolderPath =  System.getProperty("user.dir") + "/update/";
 String appPath = System.getProperty("user.dir");
 File folder = new File(appPath);
 File[] listOfFiles = folder.listFiles();
