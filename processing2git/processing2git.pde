@@ -229,17 +229,21 @@ void extractZipFile(String zipFilePath, String destinationFolderPath) {
       File newFile = new File(destinationFolderPath + fileName);
       System.out.println("Extracting file: " + newFile.getAbsolutePath());
 
-      // Create all non-existing directories
-      new File(newFile.getParent()).mkdirs();
+      if (zipEntry.isDirectory()) {
+        // Create the directory
+        newFile.mkdirs();
+      } else {
+        // Create all non-existing parent directories
+        new File(newFile.getParent()).mkdirs();
 
-      FileOutputStream fos = new FileOutputStream(newFile);
-
-      int len;
-      while ((len = zipInputStream.read(buffer)) > 0) {
-        fos.write(buffer, 0, len);
+        // Write the file contents
+        FileOutputStream fos = new FileOutputStream(newFile);
+        int len;
+        while ((len = zipInputStream.read(buffer)) > 0) {
+          fos.write(buffer, 0, len);
+        }
+        fos.close();
       }
-
-      fos.close();
 
       zipEntry = zipInputStream.getNextEntry();
     }
