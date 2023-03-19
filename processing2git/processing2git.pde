@@ -26,6 +26,8 @@ String owner = "repo owner name";
 String repo = "repo-name";
 String fileName = "zip file name.zip";
 //change directiory of zip download and zip extraction currently update folder is used!
+//the working directory is main processing v(n) folder while not complied, when you commpile the working dir
+//is the directory you executed the app. You can of course change this 
 String saveDir = System.getProperty("user.dir") + "/update/";
 String destinationFolderPath =  System.getProperty("user.dir") + "/update/";
 String appPath = System.getProperty("user.dir");
